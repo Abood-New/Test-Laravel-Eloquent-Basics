@@ -13,17 +13,14 @@ class ProjectObserver
     public function created(Project $project): void
     {
         $stat = Stat::first();
-        $stat->projects_count = $stat->projects_count+1;
+        $stat->projects_count += 1;
         $stat->save();
     }
 
     /**
      * Handle the Project "updated" event.
      */
-    public function updated(Project $project): void
-    {
-        //
-    }
+    public function updated(Project $project): void {}
 
     /**
      * Handle the Project "deleted" event.
